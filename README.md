@@ -7,7 +7,7 @@ A python program that exports your webuntis calendar to your google calendar
 Firstly, download this project
 
 ``` python
-git clone https://github.com/michadenheijer/webuntis-calendar
+git clone https://github.com/michadenheijer/webuntis-to-calendar
 ```
 
 Go into the directory (example uses the command-line)
