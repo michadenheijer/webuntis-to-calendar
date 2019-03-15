@@ -4,6 +4,34 @@ A python program that exports your webuntis calendar to your google calendar
 
 ## How to install
 
+There're multiple ways to install this program, it's advised to use the Docker method, because that's easier.
+
+### Docker
+
+First you need to install Docker, every OS has a slightly different installation method, so here are some basic instructions for some of them.
+
+#### Windows
+
+Sadly my program cannot run natively on Windows, you can install Ubuntu from the Windows Store and run the program from there.
+
+#### MacOS
+
+Follow the instructions from the [Docker Desktop for Mac installation page](https://docs.docker.com/docker-for-mac/install/).
+
+#### Raspberry Pi
+
+```bash
+curl -sSL https://get.docker.com | sh
+```
+
+#### Ubuntu
+
+```bash
+sudo apt install docker.io
+```
+
+### Python (advanced)
+
 Firstly, download this project
 
 ``` python

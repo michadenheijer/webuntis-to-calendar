@@ -8,14 +8,18 @@ import sys
 import threading
 import datetime
 import json
+import subprocess
 import webuntis
-
-from to_google_cal import add_event, delete_events
-
 
 CURRENT = os.path.dirname(sys.argv[0])
 TODAY = datetime.date.today()
 END = TODAY + datetime.timedelta(days=14)
+
+if not path.exists(CURRENT + 'config.json'):
+    CONFIG = ['python3', 'config.py']
+    subprocess.Popen(CONFIG).wait()
+
+from google_cal import add_event, delete_events
 
 with open(CURRENT + "config.json") as FILE:
     DATA = json.load(FILE)
