@@ -78,7 +78,7 @@ Go to the [Google Calendar API page](https://developers.google.com/calendar/quic
 Maybe you need to sign in, finish the prompts, and finally click on the DOWNLOAD CLIENT CONFIGURAION button. Place the downloaded file in this projects folder. At this moment you're able to run the program for the first time.
 
 ```bash
-python3 google_cal.py
+python3 schedule.py
 ```
 
 Then there'll be a prompt that allows you to login, login and it should work!
