@@ -6,11 +6,41 @@ A python program that exports your webuntis calendar to your google calendar
 
 I've started making a install with docker, but it doesn't work well. So I'd advise using the Python install.
 
-### Python (advanced)
+### 1: Windows
 
-Firstly, download this project
+First you need to download this project as .zip file. You can download this project from this [link](https://github.com/michadenheijer/webuntis-to-calendar/archive/master.zip).
 
-``` python
+Then you need to install Python 3, you can download that from the [offical Python website](https://www.python.org/downloads/windows/).
+
+Unzip the downloaded project.
+
+More instructions will be added soon.
+
+### 1: macOS
+
+First you need to download this project as .zip file. You can download this project from this [link](https://github.com/michadenheijer/webuntis-to-calendar/archive/master.zip).
+
+Then you need to install Python 3, you can download that from [the offical Python website](https://www.python.org/downloads/mac-osx/).
+
+Unzip the projects and open the folder in the terminal.
+
+Install the requirements using
+```bash
+sudo pip3 install -r requirements.txt
+```
+
+Copy the example config.
+```bash
+cp config.example.json config.json
+```
+
+Continue to step 2.
+
+### 1: Linux
+
+Firstly, download this project. To download this program you need to install git. (You can easily install git using ```sudo apt install git -y```).
+
+```bash
 git clone https://github.com/michadenheijer/webuntis-to-calendar
 ```
 
@@ -24,9 +54,11 @@ Then install the requirements and create your own config
 
 ```bash
 sudo apt install python3, python3-pip
-pip3 install -r requirements.txtt
+pip3 install -r requirements.txt
 cp config.example.json config.json
 ```
+
+### 2: Add data
 
 Edit your config with a text editor (notepad or something), it should look something like this
 
