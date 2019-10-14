@@ -1,10 +1,10 @@
 # Webuntis Calendar
 
-A python program that exports your webuntis calendar to your google calendar
+A Python program that exports your webuntis calendar to your google calendar
 
 ## How to install
 
-I've started making a install with docker, but it doesn't work well. So I'd advise using the Python install.
+This program runs on Python (3) so you need to install it first. I've made a guide for Windows, macOS and Linux.
 
 ### 1: Windows
 
@@ -14,8 +14,13 @@ Then you need to install Python 3, you can download that from the [offical Pytho
 
 Unzip the downloaded project.
 
-More instructions will be added soon.
+Now you need to open the Command Line, and open the folder where you unzipped webuntis-to-calendar.
 
+Now you need to install the requirements using
+```batch
+pip install -r requirements.txt
+```
+Continue to step 2.
 ### 1: macOS
 
 First you need to download this project as .zip file. You can download this project from this [link](https://github.com/michadenheijer/webuntis-to-calendar/archive/master.zip).
@@ -27,11 +32,6 @@ Unzip the projects and open the folder in the terminal.
 Install the requirements using
 ```bash
 sudo pip3 install -r requirements.txt
-```
-
-Copy the example config.
-```bash
-cp config.example.json config.json
 ```
 
 Continue to step 2.
@@ -50,30 +50,49 @@ Go into the directory (example uses the command-line)
 cd webuntis-calendar
 ```
 
-Then install the requirements and create your own config
+Firstly test if you have Python 3 installed using:
+```bash
+python3 --version
+```
+If it returns something like this then you've got Python installed.
+```
+Python 3.6.8
+```
+
+If you don't have Python installed you can install Python 3 using:
 
 ```bash
 sudo apt install python3, python3-pip
+```
+
+Then install the requirements
+
+```bash
 pip3 install -r requirements.txt
-cp config.example.json config.json
 ```
 
-### 2: Add data
+### 2: Google Calendar API
 
-Edit your config with a text editor (notepad or something), it should look something like this
+Now you need to get access to the Google Calendar API.
+Go to the [Google Calendar API page](https://developers.google.com/calendar/quickstart/python), and click on the blue ENABLE THE GOOGLE API button.
+Maybe you need to sign in, finish the prompts, and finally click on the DOWNLOAD CLIENT CONFIGURAION button. Place the downloaded file in this projects folder. At this moment you're able to run the program for the first time.
 
-```json
-{
-    "username": "your webuntis username",
-    "password": "your webuntis password",
-    "server": "the webuntis server",
-    "school": "your school",
-    "webuntis_id": 1,
-    "calendar_id": "primary"
-}
+Continue to step 3
+
+## 3: Adding your own data
+
+Now you can run our program. Run it using:
+```bash
+python3 schedule.py
 ```
 
-You can find your webuntis id by clicking on the print icon in webuntis, there in the url it should display something like this:
+It'll ask for your username and password first. Just fill those in.
+
+Now it asks for your Webuntis server. That is the webadress that you visit to view your Webuntis Schedule. For me it's ```https://kephiso.webuntis.com```.
+
+Now it'll ask for your school, just enter your schoolname.
+
+The last question is about your Webuntis ID. You can find your webuntis id by clicking on the print icon in webuntis, there in the url it should display something like this:
 
 ```url
 https://{}/WebUntis/api/public/printpreview/timetable?type=5&id=100&date=20190308&formatId=1
@@ -81,12 +100,8 @@ https://{}/WebUntis/api/public/printpreview/timetable?type=5&id=100&date=2019030
 
 Your webuntis id is in this example 100.
 
-Now you need to get access to the Google Calendar API.
-Go to the [Google Calendar API page](https://developers.google.com/calendar/quickstart/python), and click on the blue ENABLE THE GOOGLE API button.
-Maybe you need to sign in, finish the prompts, and finally click on the DOWNLOAD CLIENT CONFIGURAION button. Place the downloaded file in this projects folder. At this moment you're able to run the program for the first time.
+Now there's a prompt that allows you to login into your Google account. Follow the instructions and you're good to go!
 
-```bash
-python3 schedule.py
-```
+## License
 
-Then there'll be a prompt that allows you to login, login and it should work!
+[MIT](LICENSE.md)
