@@ -6,7 +6,10 @@ from PyInquirer import prompt, print_json
 import json
 import os
 import sys
+
 CURRENT = os.path.dirname(sys.argv[0])
+STORE = os.path.join(CURRENT, "config.json")
+WRONG_PASS = os.path.join(CURRENT, "wrong_pass")
 
 QUESTIONS = [
     {
@@ -42,6 +45,14 @@ QUESTIONS = [
     }
 ]
 
-ANSWERS = prompt(QUESTIONS)
-with open(CURRENT + "config.json", "w+") as CONFIG:
-    CONFIG.write(json.dumps(ANSWERS))
+def config():
+    ANSWERS = prompt(QUESTIONS)
+    
+    with open(STORE, "w+") as CONFIG:
+        CONFIG.write(json.dumps(ANSWERS))
+    
+    if os.path.exists(WRONG_PASS):
+        os.remove(WRONG_PASS)
+
+if __name__ == "__main__":
+    config()
